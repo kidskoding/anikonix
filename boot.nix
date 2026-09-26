@@ -7,6 +7,8 @@
       grub.gfxmodeEfi = "1920x1080";
 
       efi.canTouchEfiVariables = true;
+
+      timeout = 1;
     };
 
     plymouth = {

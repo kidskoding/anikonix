@@ -126,7 +126,7 @@
     ruffle
     spotify
     teams-for-linux
-    wineWowPackages.stable
+    wineWow64Packages.stable
     winetricks
     zathura
 
