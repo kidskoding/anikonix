@@ -34,6 +34,7 @@
           # "accessories" for rust
           bacon
           cargo-chef
+          cargo-generate
           evcxr
           loco
           trunk
