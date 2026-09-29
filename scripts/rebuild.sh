@@ -28,9 +28,9 @@ if [ ${#changed[@]} -gt 0 ]; then
     git add -A -- . ':!home-manager/programs/nvim'
 fi
 
-# show what changed: every staged file, then a structural diff via difftastic
+# show what changed: every staged file, then a structural diff via difftastic 
 git --no-pager diff --cached --stat
-DFT_DISPLAY=inline git --no-pager dft --cached
+DFT_DISPLAY=inline git --no-pager diff --cached
 
 echo "rebuilding nixos..."
 

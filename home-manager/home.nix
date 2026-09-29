@@ -109,7 +109,6 @@
     claude-agent-acp
     codex-acp
     devenv
-    difftastic
     duckdb
     github-cli
     mdbook

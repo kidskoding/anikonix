@@ -2,6 +2,11 @@
   colors = config.theme.colors;
   status = config.programs.git.settings.color.fileStatus;
 in {
+  programs.difftastic = {
+    enable = true;
+    git.enable = true;
+  };
+
   programs.git = {
     enable = true;
 
@@ -12,7 +17,6 @@ in {
       advice.defaultBranchName = false;
 
       alias = {
-        dft = "!GIT_EXTERNAL_DIFF=difft git diff";
         dlog = "!GIT_EXTERNAL_DIFF=difft git log --ext-diff -p";
         dshow = "!GIT_EXTERNAL_DIFF=difft git show --ext-diff";
       };
