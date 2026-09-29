@@ -15,7 +15,7 @@ cd "$FLAKE_DIR"
 # the neovim config is skipped: scripts/nvim-sync.sh commits and pushes it on its own
 git add -A -- . ':!home-manager/programs/nvim'
 
-if git diff --cached --quiet -- '*.nix' flake.lock; then
+if git diff --cached --quiet; then
     echo "no changes detected, exiting."
     exit 0
 fi
@@ -28,14 +28,15 @@ if [ ${#changed[@]} -gt 0 ]; then
     git add -A -- . ':!home-manager/programs/nvim'
 fi
 
-# show what changed
-git --no-pager diff --cached -U0 -- '*.nix'
+# show what changed: every staged file, then a structural diff via difftastic
+git --no-pager diff --cached --stat
+DFT_DISPLAY=inline git --no-pager dft --cached
 
 echo "rebuilding nixos..."
 
 before=$(readlink -f /run/current-system)
 
-if ! script -qefc "sudo nixos-rebuild switch --flake \"$FLAKE_DIR#$HOST\"" nixos-switch.log; then
+if ! script -qefc "sudo nixos-rebuild switch --flake \"$FLAKE_DIR#$HOST\" --upgrade" nixos-switch.log; then
     grep --color error nixos-switch.log || tail -n 40 nixos-switch.log
     exit 1
 fi
