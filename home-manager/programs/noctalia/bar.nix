@@ -5,7 +5,7 @@
       margin_edge = 10;
       margin_ends = 12;
       thickness = 44;
-      radius = 14;
+      radius = 16;
       padding = 12;
       widget_spacing = 12;
       font_scale = 1.1;
