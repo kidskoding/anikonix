@@ -106,10 +106,12 @@
     # additional developer tooling
     air
     bacon
+    cargo-seek
     claude-agent-acp
     codex-acp
     devenv
     duckdb
+    evcxr
     github-cli
     mdbook
     mdbook-mermaid
