@@ -32,6 +32,7 @@
   nix.settings.substituters = [
     "https://nix-community.cachix.org"
     "https://devenv.cachix.org"
+    "https://pkulak.cachix.org"
   ];
   nix.settings.trusted-public-keys = [
     # bun2nix trusted public key
@@ -39,6 +40,9 @@
 
     # devenv trusted public key
     "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+
+    # matui trusted public key
+    "pkulak.cachix.org-1:S25jAptWCkAmwrk41b47lheB9onW9mzxVqM9o6HRg1E="
   ];
 
   security.rtkit.enable = true;
@@ -134,6 +138,7 @@
     enable = true;
     package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
   };
+  niri-flake.cache.enable = true;
 
   systemd.packages = [config.programs.niri.package];
   systemd.globalEnvironment = {
