@@ -139,6 +139,7 @@
     lutris
 
     # other really cool stuff!!
+    asciiquarium
     cava
     cowsay
     fortune
