@@ -38,6 +38,7 @@
         capsule = false;
         style = "regular";
         capsule_radius = 0;
+        scale = 1.5;
         active_pill_size = 1;
         inactive_pill_size = 1;
         label_source = "id";
@@ -69,7 +70,7 @@
       };
 
       clock = {
-        format = "{:%a %b %d  %I:%M %p}";
+        format = " {:%a %b %d}    {:%I:%M %p}";
         tooltip_format = "{:%A, %B %-d %Y}";
       };
 
