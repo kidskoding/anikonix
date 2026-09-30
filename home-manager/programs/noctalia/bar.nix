@@ -35,10 +35,11 @@
 
     widget = {
       workspaces = {
+        capsule = false;
         style = "regular";
         capsule_radius = 0;
-        active_pill_size = 2;
-        inactive_pill_size = 2;
+        active_pill_size = 1;
+        inactive_pill_size = 1;
         label_source = "id";
         hide_when_empty = true;
       };
