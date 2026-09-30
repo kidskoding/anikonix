@@ -1,68 +1,58 @@
-{...}: {
-  programs.noctalia-shell.settings.bar = {
-    position = "top";
-    barType = "floating";
-    marginVertical = 6;
-    marginHorizontal = 8;
-    contentPadding = 8;
-    widgetSpacing = 8;
-    useSeparateOpacity = true;
-    backgroundOpacity = 0.85;
-    rightClickAction = "none";
+{pkgs, ...}: {
+  programs.noctalia.settings = {
+    bar.main = {
+      position = "top";
+      margin_edge = 6;
+      margin_ends = 8;
+      padding = 8;
+      widget_spacing = 8;
+      background_opacity = 0.85;
 
-    widgets = {
-      left = [
-        {
-          id = "Workspace";
-          labelMode = "index";
-          emptyColor = "none";
-          hideUnoccupied = true;
-        }
+      dead_zone.actions.right = "none";
+
+      start = ["workspaces"];
+      center = ["media" "audio_visualizer"];
+      end = [
+        "tray"
+        "volume"
+        "network"
+        "brightness"
+        "battery"
+        "clock"
+        "control-center"
       ];
-      center = [
-        {
-          id = "MediaMini";
-          compactMode = true;
-          showArtistFirst = false;
-          maxWidth = 300;
-          scrollingMode = "always";
-          useFixedWidth = false;
-        }
-        {
-          id = "AudioVisualizer";
-          visualizerType = "wave";
-          width = 80;
-          hideWhenIdle = true;
-        }
-      ];
-      right = [
-        {id = "Tray";}
-        {
-          id = "Volume";
-          displayMode = "alwaysShow";
-        }
-        {
-          id = "Network";
-          displayMode = "alwaysShow";
-        }
-        {
-          id = "Brightness";
-          displayMode = "alwaysShow";
-        }
-        {
-          id = "Battery";
-          displayMode = "icon-always";
-        }
-        {
-          id = "Clock";
-          formatHorizontal = "ddd MMM dd  hh:mm AP";
-          tooltipFormat = "dddd, MMMM d yyyy";
-        }
-        {
-          id = "ControlCenter";
-          useDistroLogo = true;
-        }
-      ];
+    };
+
+    widget = {
+      workspaces = {
+        label_source = "id";
+        hide_when_empty = true;
+      };
+
+      media = {
+        artist_first = false;
+        max_length = 300;
+        title_scroll = "always";
+        hide_when_no_media = true;
+      };
+
+      audio_visualizer = {
+        width = 80;
+        mirrored = false;
+        show_when_idle = false;
+      };
+
+      battery.display_mode = "glyph";
+
+      clock = {
+        format = "{:%a %b %d  %I:%M %p}";
+        tooltip_format = "{:%A, %B %-d %Y}";
+      };
+
+      control-center = {
+        custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
+        custom_image_colorize = true;
+      };
     };
   };
 }

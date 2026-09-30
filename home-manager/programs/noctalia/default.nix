@@ -13,34 +13,24 @@
     ./notifications.nix
   ];
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
 
     settings = {
-      settingsVersion = 59;
-
-      general.dimmerOpacity = 0.0;
-      general.avatarImage = "${./samus.png}";
-      ui.fontDefault = config.theme.fontFamily;
-      ui.fontFixed = config.theme.fontFamily;
-
-      location.weatherEnabled = true;
-      location.useFahrenheit = true;
-      location.autoLocate = true;
-      location.use12hourFormat = true;
-
-      audio = {
-        volumeStep = 5;
-        preferredPlayer = "spotify";
-        spectrumMirrored = false;
+      shell = {
+        font_family = config.theme.fontFamily;
+        time_format = "{:%-I:%M %p}";
+        avatar_path = "${./samus.png}";
       };
 
-      brightness.brightnessStep = 5;
+      location.auto_locate = true;
 
-      systemMonitor = {
-        batteryWarningThreshold = 30;
-        batteryCriticalThreshold = 15;
+      weather = {
+        enabled = true;
+        unit = "imperial";
       };
+
+      battery.warning_threshold = 30;
 
       dock.enabled = false;
     };

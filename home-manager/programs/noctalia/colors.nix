@@ -1,37 +1,26 @@
-{config, ...}: let
-  c = config.theme.colors;
+{
+  config,
+  lib,
+  ...
+}: let
+  capitalize = s: lib.toUpper (builtins.substring 0 1 s) + builtins.substring 1 (-1) s;
+  toPaletteKey = role: "m" + lib.concatMapStrings capitalize (lib.splitString "_" role);
+
+  roles = lib.mapAttrs' (role: lib.nameValuePair (toPaletteKey role)) (import ./palette.nix config.theme.colors);
 in {
-  programs.noctalia-shell = {
-    colors = {
-      mPrimary = c.yellowBright;
-      mOnPrimary = c.bg;
-
-      mSecondary = c.blueBright;
-      mOnSecondary = c.bg;
-
-      mTertiary = c.greenBright;
-      mOnTertiary = c.bg;
-
-      mError = c.redBright;
-      mOnError = c.bg;
-
-      mSurface = c.bg;
-      mOnSurface = c.fg;
-
-      mSurfaceVariant = c.bgAlt;
-      mOnSurfaceVariant = c.gray;
-
-      mOutline = c.bgAlt;
-      mShadow = c.black;
-
-      mHover = c.fg;
-      mOnHover = c.bg;
+  programs.noctalia = {
+    customPalettes.${config.theme.name} = {
+      dark = roles;
+      light = roles;
     };
 
-    settings.colorSchemes = {
-      useWallpaperColors = false;
-      predefinedScheme = "";
-      darkMode = config.theme.dark;
+    settings.theme = {
+      mode =
+        if config.theme.dark
+        then "dark"
+        else "light";
+      source = "custom";
+      custom_palette = config.theme.name;
     };
   };
 }

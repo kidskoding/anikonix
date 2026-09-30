@@ -94,7 +94,7 @@ in {
     };
 
     spawn-at-startup = [
-      {argv = ["noctalia-shell"];}
+      {argv = ["noctalia"];}
       {argv = ["blueman-applet"];}
       {
         argv = [

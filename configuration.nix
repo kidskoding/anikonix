@@ -32,6 +32,7 @@
   nix.settings.substituters = [
     "https://nix-community.cachix.org"
     "https://devenv.cachix.org"
+    "https://noctalia.cachix.org"
     "https://pkulak.cachix.org"
   ];
   nix.settings.trusted-public-keys = [
@@ -40,6 +41,9 @@
 
     # devenv trusted public key
     "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+
+    # noctalia trusted public key
+    "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
 
     # matui trusted public key
     "pkulak.cachix.org-1:S25jAptWCkAmwrk41b47lheB9onW9mzxVqM9o6HRg1E="

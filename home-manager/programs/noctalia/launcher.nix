@@ -1,21 +1,20 @@
 {...}: {
-  programs.noctalia-shell.settings.appLauncher = {
-    position = "center";
-    terminalCommand = "ghostty -e";
-    enableClipboardHistory = true;
-    sortByMostUsed = false;
+  programs.niri.settings.environment.TERMINAL = "ghostty";
 
-    pinnedApps = [
-      "NixOS Manual"
-      "Ghostty"
+  programs.noctalia.settings.shell.launcher = {
+    sort_by_usage = false;
+
+    pinned = [
+      "nixos-manual"
+      "com.mitchellh.ghostty"
       "Celeste"
-      "Claude"
+      "claude"
       "discord"
       "Enter the Gungeon"
       "Hollow Knight"
       "lunarclient"
-      "Neovim wrapper"
-      "Orca"
+      "nvim"
+      "orca-ide"
       "org.kde.dolphin"
       "qimgv"
       "rs.ruffle.Ruffle"

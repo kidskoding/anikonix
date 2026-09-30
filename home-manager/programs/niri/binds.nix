@@ -3,9 +3,8 @@
   fileManager = "dolphin";
   noctalia = c:
     [
-      "noctalia-shell"
-      "ipc"
-      "call"
+      "noctalia"
+      "msg"
     ]
     ++ c;
 
@@ -70,18 +69,18 @@ in {
         "Mod+Return".action.spawn = terminal;
         "Mod+E".action.spawn = fileManager;
         "Mod+D".action.spawn = noctalia [
+          "panel-toggle"
           "launcher"
-          "toggle"
         ];
         "Mod+C".action.spawn = noctalia [
-          "launcher"
+          "panel-toggle"
           "clipboard"
         ];
         "Mod+Shift+E".action.spawn = noctalia [
-          "sessionMenu"
-          "toggle"
+          "panel-toggle"
+          "session"
         ];
-        "Mod+Shift+R".action.spawn-sh = "pkill -f 'bin/quickshel[l]'; sleep 0.3; noctalia-shell";
+        "Mod+Shift+R".action.spawn-sh = "pkill -x noctalia; sleep 0.3; noctalia";
         "Mod+Shift+C".action.spawn = [
           "hyprpicker"
           "-a"

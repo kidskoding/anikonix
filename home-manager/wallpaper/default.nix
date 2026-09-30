@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   images = ./images;
   current = "${images}/starfire-bg.jpg";
 in {
@@ -13,18 +9,10 @@ in {
     {sh = "sleep 2 && awww img --transition-type none ${current}";}
   ];
 
-  programs.noctalia-shell.settings.wallpaper = {
+  programs.noctalia.settings.wallpaper = {
     enabled = true;
     directory = "${images}";
-    fillMode = "crop";
-  };
-
-  xdg.cacheFile."noctalia/wallpapers.json".text = builtins.toJSON {
-    wallpapers =
-      builtins.mapAttrs (_: _: {
-        dark = current;
-        light = current;
-      })
-      config.programs.niri.settings.outputs;
+    fill_mode = "crop";
+    default.path = current;
   };
 }
