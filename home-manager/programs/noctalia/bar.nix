@@ -27,6 +27,7 @@
         "network"
         "brightness"
         "battery"
+        "date"
         "clock"
         "control-center"
         "session"
@@ -70,8 +71,14 @@
         show_label = true;
       };
 
+      date = {
+        type = "clock";
+        format = " {:%a %b %d}";
+        tooltip_format = "{:%A, %B %-d %Y}";
+      };
+
       clock = {
-        format = " {:%a %b %d}    {:%I:%M %p}";
+        format = " {:%I:%M %p}";
         tooltip_format = "{:%A, %B %-d %Y}";
       };
 
