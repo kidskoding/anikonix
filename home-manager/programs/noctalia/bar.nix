@@ -34,6 +34,8 @@
     };
 
     widget = {
+      tray.drawer = true;
+
       workspaces = {
         capsule = false;
         style = "regular";

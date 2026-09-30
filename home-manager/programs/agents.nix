@@ -4,7 +4,16 @@
   lib,
   ...
 }: {
-  imports = [inputs.anikonistack.homeManagerModules.default];
+  imports = [
+    inputs.anikonistack.homeManagerModules.default
+    {
+      options.programs = lib.genAttrs ["claude-code" "codex" "opencode" "antigravity-cli"] (_: {
+        skills = lib.mkOption {
+          apply = skills: builtins.removeAttrs skills ["resolving-merge-conflicts"];
+        };
+      });
+    }
+  ];
 
   programs.claude-code = {
     package = null;

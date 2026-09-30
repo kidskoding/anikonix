@@ -35,6 +35,10 @@
     };
   };
 
+  programs.noctalia.settings.lockscreen = {
+    transition = [];
+  };
+
   programs.noctalia.settings.lockscreen_widgets.widget."lockscreen-login-box@eDP-1" = {
     type = "login_box";
     output = "eDP-1";

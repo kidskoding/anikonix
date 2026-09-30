@@ -23,6 +23,7 @@
       control_center.sidebar_section = "none";
 
       shell = {
+        animation.enabled = false;
         font_family = config.theme.fontFamily;
         time_format = "{:%-I:%M %p}";
         avatar_path = "${./samus.png}";
