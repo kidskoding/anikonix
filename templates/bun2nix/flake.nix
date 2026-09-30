@@ -26,10 +26,19 @@
       ];
 
       shellHook = ''
-        bun install --frozen-lockfile
-        bun2nix -o bun.nix
-        git init
-        git add -A
+        [ -d .git ] || git init -q
+
+        if [ ! -f bun.lock ]; then
+          bun install
+          touch node_modules
+        elif [ ! -d node_modules ] || [ bun.lock -nt node_modules ]; then
+          bun install --frozen-lockfile
+          touch node_modules
+        fi
+
+        if [ ! -f bun.nix ] || [ bun.lock -nt bun.nix ]; then
+          bun2nix -o bun.nix
+        fi
       '';
     };
   };

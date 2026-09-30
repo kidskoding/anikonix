@@ -35,12 +35,17 @@ in {
         old = status.removed;
       };
 
-      color.status.untracked = status.untracked;
+      color.status = {
+        added = status.added;
+        changed = status.modified;
+        untracked = status.untracked;
+      };
+
       core.editor = "nvim";
     };
 
     ignores = [
-      "result"
+      "result" # symlink when building to /nix/store
     ];
   };
 }
