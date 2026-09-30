@@ -35,6 +35,19 @@
     };
   };
 
+  programs.noctalia.settings.lockscreen_widgets.widget."lockscreen-login-box@eDP-1" = {
+    type = "login_box";
+    output = "eDP-1";
+    cx = 960.0;
+    cy = 540.0;
+    placement_width = 1920.0;
+    placement_height = 1080.0;
+    settings = {
+      show_unlock_hint = false;
+      center_password_text = true;
+    };
+  };
+
   programs.niri.settings.binds."Mod+Ctrl+L".action.spawn = [
     "noctalia"
     "msg"
