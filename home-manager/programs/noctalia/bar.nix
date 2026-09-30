@@ -73,11 +73,13 @@
 
       date = {
         type = "clock";
+        actions.left = "panel-toggle control-center calendar";
         format = " {:%a %b %d}";
         tooltip_format = "{:%A, %B %-d %Y}";
       };
 
       clock = {
+        actions.left = "panel-toggle noctalia/timer:panel";
         format = " {:%I:%M %p}";
         tooltip_format = "{:%A, %B %-d %Y}";
       };
