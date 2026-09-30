@@ -29,6 +29,7 @@
         "battery"
         "clock"
         "control-center"
+        "session"
       ];
     };
 
@@ -36,8 +37,8 @@
       workspaces = {
         style = "regular";
         capsule_radius = 0;
-        active_pill_size = 1.0;
-        inactive_pill_size = 1.0;
+        active_pill_size = 1.5;
+        inactive_pill_size = 1.5;
         label_source = "id";
         hide_when_empty = true;
       };
@@ -75,6 +76,14 @@
         capsule = true;
         custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
         custom_image_colorize = false;
+      };
+
+      session = {
+        glyph = "shutdown";
+        capsule = true;
+        capsule_fill = "error";
+        icon_color = "on_error";
+        actions.left = "panel-toggle session";
       };
     };
   };
