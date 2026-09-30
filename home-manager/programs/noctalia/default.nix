@@ -23,6 +23,11 @@
         font_family = config.theme.fontFamily;
         time_format = "{:%-I:%M %p}";
         avatar_path = "${./samus.png}";
+        panel = {
+          open_near_click_control_center = true;
+          open_near_click_session = true;
+          open_near_click_wallpaper = true;
+        };
       };
 
       location.auto_locate = true;
