@@ -28,7 +28,9 @@
         avatar_path = "${./samus.png}";
         panel = {
           open_near_click_control_center = true;
-          open_near_click_session = true;
+          session_placement = "floating";
+          session_position = "center";
+          open_near_click_session = false;
           open_near_click_wallpaper = true;
         };
       };
