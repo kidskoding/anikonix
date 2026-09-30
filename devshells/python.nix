@@ -1,0 +1,30 @@
+{pkgs}:
+pkgs.mkShell {
+  packages = with pkgs; [
+    (python314.withPackages (ps:
+      with ps; [
+        httpx
+        matplotlib
+        numpy
+        pandas
+        pillow
+        polars
+        pydantic
+        pytest
+        python-dotenv
+        pyyaml
+        requests
+        scikit-learn
+        setuptools
+        seaborn
+        wheel
+      ]))
+    uv
+    ruff
+  ];
+
+  env = {
+    UV_PYTHON_DOWNLOADS = "never";
+    UV_PYTHON_PREFERENCE = "only-system";
+  };
+}

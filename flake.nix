@@ -80,7 +80,13 @@
 
   outputs = inputs @ {nixpkgs, ...}: let
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
+    devShells.${system} = import ./devshells {
+      inherit pkgs;
+      fenix = inputs.fenix.packages.${system};
+    };
+
     templates = {
       uv2nix = {
         path = ./templates/uv2nix;

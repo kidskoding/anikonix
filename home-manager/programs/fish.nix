@@ -91,6 +91,7 @@ in {
       # nixos aliases
       rebuild = "/home/anirudh/nixos/scripts/rebuild.sh";
       nvim-sync = "/home/anirudh/nixos/scripts/nvim-sync.sh";
+      devshell = "/home/anirudh/nixos/scripts/devshell.sh";
       collect-garbage = "sudo nix-collect-garbage --delete-older-than 7d";
 
       # eza listings
