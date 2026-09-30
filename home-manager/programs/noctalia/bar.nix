@@ -2,23 +2,25 @@
   programs.noctalia.settings = {
     bar.main = {
       position = "top";
-      margin_edge = 6;
-      margin_ends = 8;
-      padding = 8;
-      widget_spacing = 8;
-      background_opacity = 0.85;
+      margin_edge = 10;
+      margin_ends = 12;
+      thickness = 44;
+      radius = 14;
+      padding = 12;
+      widget_spacing = 12;
+      font_scale = 1.1;
+      background_opacity = 0.96;
 
       dead_zone.actions.right = "none";
 
-      start = ["workspaces"];
-      center = ["media" "audio_visualizer"];
+      start = ["workspaces" "media" "audio_visualizer"];
+      center = ["clock"];
       end = [
         "tray"
         "volume"
         "network"
         "brightness"
         "battery"
-        "clock"
         "control-center"
       ];
     };
@@ -31,8 +33,8 @@
 
       media = {
         artist_first = false;
-        max_length = 300;
-        title_scroll = "always";
+        max_length = 240;
+        title_scroll = "on_hover";
         hide_when_no_media = true;
       };
 
@@ -42,10 +44,19 @@
         show_when_idle = false;
       };
 
-      battery.display_mode = "glyph";
+      volume.show_label = false;
+      network = {
+        show_label = false;
+        show_vpn_label = false;
+      };
+      brightness.show_label = false;
+      battery = {
+        display_mode = "glyph";
+        show_label = true;
+      };
 
       clock = {
-        format = "{:%a %b %d  %I:%M %p}";
+        format = "{:%a, %b %-d  •  %-I:%M %p}";
         tooltip_format = "{:%A, %B %-d %Y}";
       };
 
