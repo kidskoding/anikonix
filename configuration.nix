@@ -154,15 +154,21 @@
 
   system.autoUpgrade = {
     enable = true;
-    flake = inputs.self.outPath;
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "-L"
-    ];
-    dates = "09:00";
-    randomizedDelaySec = "45min";
+    flake = "github:kidskoding/nixos-config";
+    flags = ["-L"];
+    dates = "hourly";
+    randomizedDelaySec = "10min";
   };
+
+  systemd.services.nixos-upgrade.preStart = ''
+    ${pkgs.util-linux}/bin/runuser -u anirudh -- ${pkgs.bash}/bin/bash -c '
+      export HOME=/home/anirudh
+      cd /home/anirudh/nixos || exit 0
+      git pull --ff-only || exit 0
+      nix flake update anikonistack --commit-lock-file || exit 0
+      git push || true
+    '
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
