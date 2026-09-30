@@ -1,6 +1,7 @@
 {config, ...}: let
   nixosBlue = "38;2;82;119;195";
   nixosBlueLight = "38;2;126;186;228";
+  glyph = code: builtins.fromJSON ''"\u${code}"'';
 in {
   programs.fastfetch = {
     enable = true;
@@ -25,6 +26,19 @@ in {
       display = {
         separator = " ";
         color.keys = "38;2;${config.theme.ansi.gray}";
+        bar = {
+          width = 30;
+          char = {
+            elapsed = glyph "ee04";
+            total = glyph "ee01";
+          };
+          border = {
+            left = glyph "ee00";
+            right = glyph "ee02";
+            leftElapsed = glyph "ee03";
+            rightElapsed = glyph "ee05";
+          };
+        };
       };
 
       modules = [
@@ -104,6 +118,13 @@ in {
           type = "disk";
           key = "│ {#34}󰉉 disk    {#keys}│";
           folders = "/";
+        }
+        {
+          type = "disk";
+          key = "│           │";
+          folders = "/";
+          format = "{size-percentage-bar}";
+          percent.type = 2;
         }
         {
           type = "custom";
