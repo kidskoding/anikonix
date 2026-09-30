@@ -29,6 +29,7 @@ in {
 
       selection-word-chars = ",│`|:\"' ()[]{}<>\t,";
       copy-on-select = "clipboard";
+      app-notifications = false;
 
       cursor-style = "block";
       cursor-style-blink = false;
