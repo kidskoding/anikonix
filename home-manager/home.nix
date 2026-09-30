@@ -148,6 +148,7 @@
     presenterm
     tickrs
     timr-tui
+    tldr
     wtf
 
     # fonts
