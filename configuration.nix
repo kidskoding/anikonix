@@ -160,6 +160,12 @@
     randomizedDelaySec = "10min";
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   systemd.services.nixos-upgrade.preStart = ''
     ${pkgs.util-linux}/bin/runuser -u anirudh -- ${pkgs.bash}/bin/bash -c '
       export HOME=/home/anirudh
