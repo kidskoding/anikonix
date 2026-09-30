@@ -39,6 +39,7 @@
         style = "regular";
         capsule_radius = 0;
         scale = 1.5;
+        font_weight = 700;
         active_pill_size = 1;
         inactive_pill_size = 1;
         label_source = "id";
