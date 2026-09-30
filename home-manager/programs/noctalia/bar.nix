@@ -50,13 +50,13 @@
 
       media = {
         artist_first = false;
-        max_length = 300;
+        max_length = 220;
         title_scroll = "always";
         hide_when_no_media = true;
       };
 
       audio_visualizer = {
-        width = 80;
+        width = 48;
         mirrored = false;
         show_when_idle = false;
       };
