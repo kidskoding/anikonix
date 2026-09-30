@@ -1,7 +1,6 @@
 {config, ...}: let
   nixosBlue = "38;2;82;119;195";
   nixosBlueLight = "38;2;126;186;228";
-  glyph = code: builtins.fromJSON ''"\u${code}"'';
 in {
   programs.fastfetch = {
     enable = true;
@@ -26,128 +25,98 @@ in {
       display = {
         separator = " ";
         color.keys = "38;2;${config.theme.ansi.gray}";
-        bar = {
-          width = 30;
-          char = {
-            elapsed = glyph "ee04";
-            total = glyph "ee01";
-          };
-          border = {
-            left = glyph "ee00";
-            right = glyph "ee02";
-            leftElapsed = glyph "ee03";
-            rightElapsed = glyph "ee05";
-          };
-        };
       };
 
       modules = [
         {
           type = "custom";
-          key = "╭─────────────────── system ───────────────────╮";
+          key = "╭───────────╮";
         }
         {
           type = "title";
-          key = "  {#31} user    {#keys}•";
+          key = "│ {#31} user    {#keys}│";
           format = "{user-name}";
         }
         {
           type = "title";
-          key = "  {#32}󰇅 hname   {#keys}•";
+          key = "│ {#32}󰇅 hname   {#keys}│";
           format = "{host-name}";
         }
         {
           type = "os";
-          key = "  {#33}{icon} distro  {#keys}•";
+          key = "│ {#33}{icon} distro  {#keys}│";
         }
         {
           type = "kernel";
-          key = "  {#34} kernel  {#keys}•";
+          key = "│ {#34} kernel  {#keys}│";
         }
         {
           type = "packages";
-          key = "  {#35}󰏗 pkgs    {#keys}•";
+          key = "│ {#35}󰏗 pkgs    {#keys}│";
         }
         {
           type = "wm";
-          key = "  {#36}󰖲 wm      {#keys}•";
+          key = "│ {#36}󰖲 wm      {#keys}│";
         }
         {
           type = "custom";
-          key = "  {#31} toolkit {#keys}•";
+          key = "│ {#31} toolkit {#keys}│";
           format = "noctalia ${config.programs.noctalia-shell.package.version}";
         }
         {
           type = "custom";
-          key = "  {#32}󰏘 theme   {#keys}•";
+          key = "│ {#32}󰏘 theme   {#keys}│";
           format = config.theme.name;
         }
         {
           type = "custom";
-          key = "  {#33} font    {#keys}•";
+          key = "│ {#33} font    {#keys}│";
           format = config.theme.fontFamily;
         }
         {
           type = "terminal";
-          key = "  {#34} term    {#keys}•";
+          key = "│ {#34} term    {#keys}│";
         }
         {
           type = "shell";
-          key = "  {#35} shell   {#keys}•";
-        }
-        {
-          type = "custom";
-          key = "├────────────────── hardware ──────────────────┤";
+          key = "│ {#35} shell   {#keys}│";
         }
         {
           type = "host";
-          key = "  {#36} host    {#keys}•";
+          key = "│ {#36} host    {#keys}│";
         }
         {
           type = "cpu";
-          key = "  {#31}󰍛 cpu     {#keys}•";
+          key = "│ {#31}󰍛 cpu     {#keys}│";
           format = "{name}";
         }
         {
           type = "gpu";
-          key = "  {#32}󰍛 gpu     {#keys}•";
+          key = "│ {#32}󰍛 gpu     {#keys}│";
           format = "{1} {2}";
           hideType = "integrated";
         }
         {
           type = "memory";
-          key = "  {#33} memory  {#keys}•";
-        }
-        {
-          type = "memory";
-          key = "             ";
-          format = "{percentage-bar}";
-          percent.type = 2;
-        }
-        {
-          type = "custom";
-          key = "├────────────────── storage ───────────────────┤";
+          key = "│ {#33} memory  {#keys}│";
         }
         {
           type = "disk";
-          key = "  {#34}󰉉 disk    {#keys}•";
+          key = "│ {#34}󰉉 disk    {#keys}│";
           folders = "/";
         }
         {
-          type = "disk";
-          key = "             ";
-          folders = "/";
-          format = "{size-percentage-bar}";
-          percent.type = 2;
+          type = "custom";
+          key = "├───────────┤";
         }
         {
           type = "custom";
-          key = "╰──────────────────────────────────────────────╯";
-        }
-        {
-          type = "custom";
-          key = "  {#39} colors  {#keys}•";
+          key = "│ {#39} colors  {#keys}│";
           format = "{#31}██{#32}██{#33}██{#34}██{#35}██{#36}██{#37}██{#}";
+        }
+        {
+          type = "custom";
+          key = "╰───────────╯";
         }
       ];
     };
