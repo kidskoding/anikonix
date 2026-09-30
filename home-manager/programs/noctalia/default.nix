@@ -18,6 +18,7 @@
 
     settings = {
       accessibility.ui_scale = 1.2;
+      osd.kinds.media = false;
       plugins.enabled = ["noctalia/timer"];
 
       control_center.sidebar_section = "none";

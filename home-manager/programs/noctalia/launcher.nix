@@ -2,6 +2,7 @@
   programs.niri.settings.environment.TERMINAL = "ghostty";
 
   programs.noctalia.settings.shell.launcher = {
+    categories = false;
     sort_by_usage = false;
 
     pinned = [
