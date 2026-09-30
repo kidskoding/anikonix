@@ -139,7 +139,7 @@
     lutris
 
     # other really cool stuff!!
-    asciiquarium
+    asciiquarium-transparent
     cava
     cowsay
     fortune
