@@ -72,8 +72,9 @@
       };
 
       control-center = {
-        custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
-        custom_image_colorize = true;
+        capsule = false;
+        custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+        custom_image_colorize = false;
       };
     };
   };
