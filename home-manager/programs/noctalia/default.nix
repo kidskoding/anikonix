@@ -19,6 +19,8 @@
     settings = {
       accessibility.ui_scale = 1.2;
 
+      control_center.sidebar_section = "none";
+
       shell = {
         font_family = config.theme.fontFamily;
         time_format = "{:%-I:%M %p}";

@@ -72,7 +72,7 @@
       };
 
       control-center = {
-        capsule = false;
+        capsule = true;
         custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
         custom_image_colorize = false;
       };
