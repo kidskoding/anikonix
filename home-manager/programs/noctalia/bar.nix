@@ -72,7 +72,7 @@
 
       clock = {
         actions.left = "panel-toggle control-center calendar";
-        format = " {:%a %b %d}    {:%I:%M %p}";
+        format = " {:%a %b %d}  |   {:%I:%M %p}";
         tooltip_format = "{:%A, %B %-d %Y}";
       };
 
