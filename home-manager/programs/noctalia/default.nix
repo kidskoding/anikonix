@@ -17,6 +17,8 @@
     enable = true;
 
     settings = {
+      accessibility.ui_scale = 1.2;
+
       shell = {
         font_family = config.theme.fontFamily;
         time_format = "{:%-I:%M %p}";

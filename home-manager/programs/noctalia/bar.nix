@@ -9,18 +9,25 @@
       padding = 12;
       widget_spacing = 12;
       font_scale = 1.1;
-      background_opacity = 0.96;
+      scale = 1.1;
+      background_opacity = 0.85;
+      capsule = true;
+      capsule_fill = "surface_variant";
+      capsule_border_width = 0;
+      capsule_padding = 8;
+      capsule_thickness = 0.8;
 
       dead_zone.actions.right = "none";
 
-      start = ["workspaces" "media" "audio_visualizer"];
-      center = ["clock"];
+      start = ["workspaces"];
+      center = ["media" "audio_visualizer"];
       end = [
         "tray"
         "volume"
         "network"
         "brightness"
         "battery"
+        "clock"
         "control-center"
       ];
     };
@@ -33,8 +40,8 @@
 
       media = {
         artist_first = false;
-        max_length = 240;
-        title_scroll = "on_hover";
+        max_length = 300;
+        title_scroll = "always";
         hide_when_no_media = true;
       };
 
@@ -44,19 +51,19 @@
         show_when_idle = false;
       };
 
-      volume.show_label = false;
+      volume.show_label = true;
       network = {
-        show_label = false;
+        show_label = true;
         show_vpn_label = false;
       };
-      brightness.show_label = false;
+      brightness.show_label = true;
       battery = {
         display_mode = "glyph";
         show_label = true;
       };
 
       clock = {
-        format = "{:%a, %b %-d  •  %-I:%M %p}";
+        format = "{:%a %b %d  %I:%M %p}";
         tooltip_format = "{:%A, %B %-d %Y}";
       };
 
