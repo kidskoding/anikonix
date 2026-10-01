@@ -156,6 +156,7 @@
     mermaid-cli
     pipes
     presenterm
+    rclone
     tickrs
     timr-tui
     tldr
