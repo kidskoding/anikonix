@@ -149,6 +149,9 @@
     SYSTEMD_SLEEP_FREEZE_USER_SESSIONS = "false";
   };
 
+  boot.supportedFilesystems = ["btrfs" "fuse"];
+  programs.fuse.userAllowOther = true;
+
   # plasma (dolphin-style) file dialog for portal-using apps
   xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
 

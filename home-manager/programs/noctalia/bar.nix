@@ -57,7 +57,7 @@
       audio_visualizer = {
         width = 48;
         mirrored = false;
-        show_when_idle = true;
+        show_when_idle = false;
       };
 
       volume.show_label = true;
