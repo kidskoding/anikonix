@@ -40,6 +40,15 @@
   };
 
   programs.noctalia.settings.lockscreen_widgets.widget = {
+    "lockscreen-clock@eDP-1" = {
+      type = "clock";
+      output = "eDP-1";
+      cx = 960.0;
+      cy = 130.0;
+      scale = 1.5;
+      settings.format = config.programs.noctalia.settings.shell.time_format;
+    };
+
     "lockscreen-avatar@eDP-1" = {
       type = "sticker";
       output = "eDP-1";
@@ -71,6 +80,7 @@
         show_unlock_hint = false;
         center_password_text = true;
         show_media = false;
+        show_weather = false;
       };
     };
 
