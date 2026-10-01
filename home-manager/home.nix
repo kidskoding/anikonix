@@ -156,11 +156,14 @@
     mermaid-cli
     pipes
     presenterm
-    rclone
     tickrs
     timr-tui
     tldr
     wtf
+
+    # user utilities
+    rclone
+    sshfs
 
     # fonts
     nerd-fonts.symbols-only
