@@ -61,7 +61,6 @@
       settings = {
         show_unlock_hint = false;
         center_password_text = true;
-        show_weather = false;
       };
     };
   };
