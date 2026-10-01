@@ -46,7 +46,7 @@
       cx = 960.0;
       cy = 130.0;
       scale = 1.5;
-      settings.format = config.programs.noctalia.settings.shell.time_format;
+      settings.format = "{:%-I:%M %p}\n{:%A, %B %-d}";
     };
 
     "lockscreen-avatar@eDP-1" = {
