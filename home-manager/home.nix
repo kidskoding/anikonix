@@ -19,6 +19,13 @@
     VISUAL = "nvim";
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
+    };
+  };
+
   home.packages = with pkgs; [
     # additional user system tools
     cliphist
