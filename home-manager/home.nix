@@ -169,5 +169,6 @@
     nerd-fonts.symbols-only
     nerd-fonts.terminess-ttf
     symbola
+    corefonts
   ];
 }
