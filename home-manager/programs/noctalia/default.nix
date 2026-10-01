@@ -26,7 +26,7 @@
       shell = {
         font_family = config.theme.fontFamily;
         time_format = "{:%-I:%M %p}";
-        avatar_path = "${./samus.png}";
+        avatar_path = "${./avatars/nixos-logo.png}";
         panel = {
           open_near_click_control_center = true;
           session_placement = "floating";
