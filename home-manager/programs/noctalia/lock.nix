@@ -79,17 +79,8 @@
       settings = {
         show_unlock_hint = false;
         center_password_text = true;
-        show_media = false;
         show_weather = false;
       };
-    };
-
-    "lockscreen-media@eDP-1" = {
-      type = "media_player";
-      output = "eDP-1";
-      cx = 960.0;
-      cy = 800.0;
-      settings.hide_when_no_media = true;
     };
   };
 
