@@ -52,6 +52,7 @@
         max_length = 300;
         title_scroll = "always";
         hide_when_no_media = true;
+        show_progress = true;
       };
 
       volume.show_label = true;
