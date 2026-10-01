@@ -49,7 +49,7 @@
 
       media = {
         artist_first = false;
-        max_length = 220;
+        max_length = 350;
         title_scroll = "always";
         hide_when_no_media = true;
       };
