@@ -137,6 +137,7 @@
     wineWow64Packages.stable
     winetricks
     zathura
+    zoom-us
 
     # gaming
     bottles
