@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   services.hypridle = {
     enable = true;
     settings.general = {
@@ -46,29 +46,9 @@
       type = "clock";
       output = "eDP-1";
       cx = 960.0;
-      cy = 130.0;
+      cy = 300.0;
       scale = 1.5;
       settings.format = "{:%-I:%M %p}\n{:%A, %B %-d}";
-    };
-
-    "lockscreen-avatar@eDP-1" = {
-      type = "sticker";
-      output = "eDP-1";
-      cx = 960.0;
-      cy = 300.0;
-      scale = 0.6;
-      settings.image_path = "${./avatars/nixos-logo.png}";
-    };
-
-    "lockscreen-user@eDP-1" = {
-      type = "label";
-      output = "eDP-1";
-      cx = 960.0;
-      cy = 420.0;
-      settings = {
-        title = config.home.username;
-        description = "";
-      };
     };
 
     "lockscreen-login-box@eDP-1" = {
