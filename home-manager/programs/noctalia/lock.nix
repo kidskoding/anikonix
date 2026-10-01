@@ -39,6 +39,8 @@
     transition = [];
   };
 
+  programs.noctalia.settings.lockscreen_widgets.enabled = true;
+
   programs.noctalia.settings.lockscreen_widgets.widget = {
     "lockscreen-clock@eDP-1" = {
       type = "clock";
