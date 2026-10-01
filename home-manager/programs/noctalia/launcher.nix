@@ -23,7 +23,6 @@
       "Stardew Valley"
       "steam"
       "The Binding of Isaac Rebirth"
-      "thunderbird"
       "zen-beta"
     ];
   };

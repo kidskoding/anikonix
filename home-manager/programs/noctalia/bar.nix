@@ -19,7 +19,7 @@
 
       dead_zone.actions.right = "none";
 
-      start = ["workspaces"];
+      start = ["control-center" "workspaces"];
       center = ["media" "audio_visualizer"];
       end = [
         "tray"
@@ -28,7 +28,6 @@
         "brightness"
         "battery"
         "clock"
-        "control-center"
         "session"
       ];
     };

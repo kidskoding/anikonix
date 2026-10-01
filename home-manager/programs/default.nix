@@ -12,7 +12,6 @@
 
     ./niri
     ./noctalia
-    ./thunderbird.nix
     ./obs.nix
 
     ./git.nix
