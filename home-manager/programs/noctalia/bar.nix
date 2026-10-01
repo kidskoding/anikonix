@@ -20,7 +20,7 @@
       dead_zone.actions.right = "none";
 
       start = ["control-center" "workspaces"];
-      center = ["media" "audio_visualizer"];
+      center = ["media"];
       end = [
         "tray"
         "volume"
@@ -52,12 +52,6 @@
         max_length = 300;
         title_scroll = "always";
         hide_when_no_media = true;
-      };
-
-      audio_visualizer = {
-        width = 48;
-        mirrored = false;
-        show_when_idle = false;
       };
 
       volume.show_label = true;
