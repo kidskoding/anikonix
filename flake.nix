@@ -51,6 +51,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # disko: declarative disk layout!
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # secrets (sops)
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -114,7 +120,9 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
+        ./disko.nix
         ./home-manager/programs/noctalia/greeter.nix
+        inputs.disko.nixosModules.disko
         inputs.niri.nixosModules.niri
         inputs.noctalia-greeter.nixosModules.default
 
