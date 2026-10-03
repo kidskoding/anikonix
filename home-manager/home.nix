@@ -26,34 +26,6 @@
     };
   };
 
-  systemd.user.services.rclone-gdrive-sync = {
-    Unit = {
-      Description = "Automated rclone sync to Google Drive";
-      After = ["network-online.target"];
-    };
-
-    Service = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.rclone}/bin/rclone copy %h/Documents gdrive:Backup";
-      Environment = "RCLONE_CONFIG=%h/.config/rclone/rclone.conf";
-    };
-  };
-
-  systemd.user.timers.rclone-gdrive-sync = {
-    Unit = {
-      Description = "Run rclone Google Drive sync periodically";
-    };
-
-    Timer = {
-      OnCalendar = "*-*-* 00/2:00:00";
-      Persistent = true;
-    };
-
-    Install = {
-      WantedBy = ["timers.target"];
-    };
-  };
-
   home.packages = with pkgs; [
     # additional user system tools
     cliphist
