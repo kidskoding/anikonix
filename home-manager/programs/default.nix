@@ -28,6 +28,8 @@
     nix-direnv.enable = true;
   };
 
+  programs.neovide.enable = true;
+
   # neovim config managed separately and is in its own repo (subtree)
   # linked live so edits do not need any rebuild
   xdg.configFile."nvim".source =
